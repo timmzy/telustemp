@@ -329,3 +329,7 @@ class UploadRedirect(models.Model):
             status = redirectIt(self.fileObj, 2)
         else:
             status = redirectIt(self.fileObj, 1)
+        if status == 1:
+            pass
+        else:
+            return HttpResponse("<h1>Opps! Not working.</h1> <p>Most likely wrong format</p>")
